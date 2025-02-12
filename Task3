@@ -1,0 +1,16 @@
+import nltk
+from nltk.chat.util import Chat, reflections
+import re
+# Define pairs of patterns and responses
+pairs = [
+    (r"hi|hello|hey", ["Hello! How can I assist you today?", "Hi! How's it going?"]),
+    (r"how are you?", ["I'm doing great, thanks for asking!", "I'm doing well! How about you?"]),
+    (r"what is your name?", ["I'm a chatbot created to assist you.", "You can call me Bot."]),
+    (r"weather", ["I can't provide real-time weather data, but you can check weather websites for accurate information."]),
+    (r"tell me a joke", ["Why don't skeletons fight each other? They don't have the guts!"]),
+    (r"can you help me with (.*)", ["Of course! What do you need help with regarding %1?"]),
+    (r"what is (.*)", ["I don't have specific information about %1, but you can check online for more details."]),
+    (r"(.*) your (.*)", ["Could you clarify what you mean by that?"]),
+    (r"bye|goodbye", ["Goodbye! Have a great day!", "See you later!"]),
+    (r"(.*)", ["I'm sorry, I didn't quite understand that. Could you rephrase?"]),
+]
